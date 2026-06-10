@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.title("Monthly Data Explorer")
+st.title("David and his first app. Nerd!!!")
 
 # Load the Excel file
 df = pd.read_excel('testing.xlsx')
