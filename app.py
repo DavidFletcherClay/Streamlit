@@ -9,7 +9,7 @@ df = pd.read_excel('testing.xlsx')
 
 
 # Dropdown to select column
-column = st.selectbox("Select:", ['Act', 'Bud', 'PY'])
+column = st.selectbox("Select:", ['Act', 'Bud', 'PY', 'PPY'])
 
 # Plot the selected column
 st.subheader(f"Line Chart shown below - {column}")
