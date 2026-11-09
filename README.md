@@ -46,10 +46,14 @@ One-time setup (Dropbox's page names may differ slightly from these):
 2. On the app's **Permissions** tab tick `files.content.read` and `files.content.write`,
    then **Submit**.
 3. On the **Settings** tab copy the **App key** and **App secret**.
-4. On your computer run `pip install dropbox` then `python get_dropbox_token.py`, paste the key
-   and secret, approve access in the browser, and paste back the code.
-5. It prints a `[dropbox]` block. Put it in `.streamlit/secrets.toml` (see
-   `.streamlit/secrets.toml.example`) or, when hosted, in the app's **Secrets** settings.
+4. Get the refresh token, either way:
+   - **From a phone/browser:** put `app_password`, `app_key` and `app_secret` in the app's
+     Secrets (leave out `refresh_token`). The app then shows a **Connect Dropbox** screen: tap
+     **Open Dropbox**, **Allow**, paste the code back, and copy the `refresh_token` line it
+     shows into Secrets.
+   - **From a computer:** run `pip install dropbox` then `python get_dropbox_token.py`, and put
+     the `[dropbox]` block it prints into `.streamlit/secrets.toml` (see
+     `.streamlit/secrets.toml.example`) or the app's Secrets.
 
 The files then appear in Dropbox under **Apps → <your app name> → Exercise Tracker**.
 

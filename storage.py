@@ -9,7 +9,9 @@ box) contains:
     refresh_token = "..."
     folder = "/Exercise Tracker"   # optional
 
-Run `python get_dropbox_token.py` once to get the refresh token.
+If only app_key and app_secret are filled in, the app shows a "Connect Dropbox"
+screen that gets the refresh token from a phone or browser
+(get_dropbox_token.py does the same from a computer).
 """
 from __future__ import annotations
 
@@ -39,6 +41,35 @@ def _client(app_key: str, app_secret: str, refresh_token: str):
     import dropbox
 
     return dropbox.Dropbox(oauth2_refresh_token=refresh_token, app_key=app_key, app_secret=app_secret)
+
+
+def _raw_config() -> dict:
+    try:
+        return dict(st.secrets.get("dropbox") or {})
+    except Exception:
+        return {}
+
+
+def needs_connecting() -> bool:
+    """App key and secret are set but there is no refresh token yet."""
+    cfg = _raw_config()
+    return bool(cfg.get("app_key") and cfg.get("app_secret") and not cfg.get("refresh_token"))
+
+
+def _flow():
+    from dropbox.oauth import DropboxOAuth2FlowNoRedirect
+
+    cfg = _raw_config()
+    return DropboxOAuth2FlowNoRedirect(cfg["app_key"], cfg["app_secret"], token_access_type="offline")
+
+
+def connect_url() -> str:
+    return _flow().start()
+
+
+def finish_connect(code: str) -> str:
+    """Swap the code Dropbox shows the user for a long-lived refresh token."""
+    return _flow().finish(code.strip()).refresh_token
 
 
 def backend() -> str:

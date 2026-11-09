@@ -74,6 +74,44 @@ def check_password() -> None:
 check_password()
 
 
+def dropbox_setup_screen() -> None:
+    """One-time Dropbox connection that works entirely from a phone browser."""
+    if not storage.needs_connecting():
+        return
+    st.title("☁️ Connect Dropbox")
+    try:
+        has_password = bool(st.secrets.get("app_password"))
+    except Exception:
+        has_password = False
+    if not has_password:
+        st.warning("Add an `app_password` line to your Secrets first, then come back here.")
+        st.stop()
+    st.markdown("Your app key and secret are in place. Two more steps:")
+    st.markdown("**1.** Tap this link, sign in to Dropbox if asked, and tap **Allow**. "
+                "Dropbox then shows you a code - copy it.")
+    st.link_button("Open Dropbox", storage.connect_url(), type="primary")
+    code = st.text_input("**2.** Paste the code here")
+    if st.button("Connect") and code.strip():
+        try:
+            token = storage.finish_connect(code)
+        except Exception as err:
+            st.error(f"Dropbox didn't accept that code ({err}). Codes only work once and expire "
+                     "quickly - tap 'Open Dropbox' again to get a fresh one.")
+        else:
+            st.success("Connected! One last step:")
+            st.markdown(
+                "Copy the line below (tap the copy icon at its right). Then in Streamlit go to "
+                "**Manage app → ⋮ → Settings → Secrets** and paste it under the other lines in "
+                "the `[dropbox]` section, then **Save**."
+            )
+            st.code(f'refresh_token = "{token}"', language="toml")
+            st.caption("Keep this private - it lets the app read and write its Dropbox folder.")
+    st.stop()
+
+
+dropbox_setup_screen()
+
+
 def metric_cols(n: int) -> list:
     """Metric 'columns' that wrap two-per-row on a phone instead of stacking one per row."""
     row = st.container(horizontal=True, wrap=True, gap="medium")
