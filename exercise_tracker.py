@@ -261,6 +261,9 @@ location = storage.location_label()
 try:
     raw, log_rev = load_log(location)
     weights, weights_rev = load_weights(location)
+except storage.DropboxLoginError as err:
+    st.error(f"Could not load your data from {location}.\n\n{err}")
+    st.stop()
 except Exception as err:
     st.error(f"Could not load your data from {location}.\n\n{err}")
     st.info("Check the [dropbox] settings in your Streamlit secrets (see README).")

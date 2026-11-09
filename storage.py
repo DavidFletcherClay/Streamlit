@@ -26,6 +26,10 @@ class ConflictError(Exception):
     """The file changed in Dropbox after the app loaded it."""
 
 
+class DropboxLoginError(Exception):
+    """Dropbox would not accept the saved login (refresh token)."""
+
+
 def _raw_config() -> dict:
     """The [dropbox] secrets, with stray spaces (easy to add when pasting on a phone) removed."""
     try:
@@ -94,6 +98,45 @@ def _dbx():
     return _client(cfg["app_key"], cfg["app_secret"], cfg["refresh_token"])
 
 
+def _call(fn):
+    """Run fn(client). If Dropbox rejects the login, get a fresh one and retry once.
+
+    The SDK only renews its short-lived login when Dropbox says it *expired*; one that was
+    cancelled (e.g. after reconnecting, or after permissions changed) would otherwise keep
+    failing until the app restarted.
+    """
+    import dropbox
+
+    retryable = (dropbox.exceptions.AuthError, dropbox.exceptions.BadInputError)
+    try:
+        return fn(_dbx())
+    except retryable:
+        _client.clear()
+    dbx = _dbx()
+    try:
+        dbx.refresh_access_token()
+    except Exception as err:
+        raise DropboxLoginError(
+            "Dropbox did not accept the saved login. In Secrets, delete the refresh_token "
+            "line and Save, then reload the app to reconnect Dropbox."
+        ) from err
+    try:
+        return fn(dbx)
+    except dropbox.exceptions.BadInputError as err:
+        if "required scope" in str(err):
+            raise DropboxLoginError(
+                "The Dropbox app is missing a permission. On the Dropbox app's Permissions tab tick "
+                "files.content.read and files.content.write, press Submit, then delete the "
+                "refresh_token line from Secrets, Save, and reload the app to reconnect."
+            ) from err
+        raise
+    except dropbox.exceptions.AuthError as err:
+        raise DropboxLoginError(
+            "Dropbox did not accept the saved login. In Secrets, delete the refresh_token "
+            "line and Save, then reload the app to reconnect Dropbox."
+        ) from err
+
+
 def read(name: str, seed: bytes) -> tuple[bytes, str | None]:
     """Return (file contents, revision). Creates the file from `seed` if it is missing.
 
@@ -108,17 +151,16 @@ def read(name: str, seed: bytes) -> tuple[bytes, str | None]:
 
     import dropbox
 
-    dbx = _dbx()
     path = f"{folder()}/{name}"
     try:
-        md, resp = dbx.files_download(path)
+        md, resp = _call(lambda dbx: dbx.files_download(path))
         return resp.content, md.rev
     except dropbox.exceptions.ApiError as e:
         err = e.error
         if not (err.is_path() and err.get_path().is_not_found()):
             raise
     # First run: copy the starting data into Dropbox.
-    md = dbx.files_upload(seed, path, mode=dropbox.files.WriteMode.add)
+    md = _call(lambda dbx: dbx.files_upload(seed, path, mode=dropbox.files.WriteMode.add))
     return seed, md.rev
 
 
@@ -133,7 +175,7 @@ def write(name: str, data: bytes, rev: str | None) -> str | None:
 
     mode = dropbox.files.WriteMode.update(rev) if rev else dropbox.files.WriteMode.overwrite
     try:
-        md = _dbx().files_upload(data, f"{folder()}/{name}", mode=mode)
+        md = _call(lambda dbx: dbx.files_upload(data, f"{folder()}/{name}", mode=mode))
     except dropbox.exceptions.ApiError as e:
         err = e.error
         if err.is_path() and err.get_path().reason.is_conflict():
