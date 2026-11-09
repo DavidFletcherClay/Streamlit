@@ -2,23 +2,30 @@
 
 Run with:  streamlit run exercise_tracker.py
 
-Data lives in two CSV files in ./data:
+Data lives in two CSV files, in Dropbox if configured (see storage.py), otherwise in ./data:
   exercise_log.csv  - one row per cardio activity, or per strength exercise at one weight
   body_weight.csv   - body-weight check-ins
 """
 from __future__ import annotations
 
 import datetime as dt
+import hmac
 import re
 from pathlib import Path
+
+import io
 
 import altair as alt
 import pandas as pd
 import streamlit as st
 
-DATA_DIR = Path(__file__).parent / "data"
-LOG_FILE = DATA_DIR / "exercise_log.csv"
-WEIGHT_FILE = DATA_DIR / "body_weight.csv"
+import storage
+
+# Bundled starting data, copied to the storage location the first time the app runs.
+SEED_DIR = Path(__file__).parent / "data"
+LOG_NAME = "exercise_log.csv"
+WEIGHT_NAME = "body_weight.csv"
+WEIGHT_COLUMNS = ["date", "weight_kg", "notes"]
 
 LBS_PER_KG = 2.20462262
 HEIGHT_CM = 189
@@ -41,7 +48,42 @@ DEFAULT_ACTIVITIES = {
     "Rest": ["Rest day"],
 }
 
-st.set_page_config(page_title="Exercise Tracker", page_icon="🏋️", layout="wide")
+st.set_page_config(page_title="Exercise Tracker", page_icon="🏋️", layout="wide",
+                   initial_sidebar_state="auto")
+
+
+def check_password() -> None:
+    """If an app_password is set in secrets, ask for it once per browser session."""
+    try:
+        expected = st.secrets.get("app_password")
+    except Exception:
+        expected = None
+    if not expected or st.session_state.get("authenticated"):
+        return
+    st.title("🏋️ Exercise Tracker")
+    with st.form("login"):
+        pw = st.text_input("Password", type="password")
+        if st.form_submit_button("Unlock", type="primary"):
+            if hmac.compare_digest(pw.encode(), str(expected).encode()):
+                st.session_state["authenticated"] = True
+                st.rerun()
+            st.error("Wrong password.")
+    st.stop()
+
+
+check_password()
+
+
+def metric_cols(n: int) -> list:
+    """Metric 'columns' that wrap two-per-row on a phone instead of stacking one per row."""
+    row = st.container(horizontal=True, wrap=True, gap="medium")
+
+    class _Cell:
+        def metric(self, *args, **kwargs):
+            kwargs.setdefault("width", 150)
+            return row.metric(*args, **kwargs)
+
+    return [_Cell() for _ in range(n)]
 
 
 # --------------------------------------------------------------------------- helpers
@@ -95,9 +137,15 @@ def rep_list(value) -> list[int]:
     return [int(r) for r in str(value).split(";") if r.strip().isdigit()]
 
 
-@st.cache_data
-def load_log(mtime: float) -> pd.DataFrame:  # mtime only busts the cache
-    df = pd.read_csv(LOG_FILE, dtype={"reps": str, "level": str, "duration": str})
+def seed_bytes(name: str, columns: list[str]) -> bytes:
+    path = SEED_DIR / name
+    return path.read_bytes() if path.exists() else (",".join(columns) + "\n").encode()
+
+
+@st.cache_data(ttl=300, show_spinner="Loading your log…")
+def load_log(location: str) -> tuple[pd.DataFrame, str | None]:  # location only keys the cache
+    data, rev = storage.read(LOG_NAME, seed_bytes(LOG_NAME, COLUMNS))
+    df = pd.read_csv(io.BytesIO(data), dtype={"reps": str, "level": str, "duration": str})
     for c in COLUMNS:
         if c not in df.columns:
             df[c] = None
@@ -107,28 +155,43 @@ def load_log(mtime: float) -> pd.DataFrame:  # mtime only busts the cache
         df[c] = df[c].fillna("").astype(str)
     for c in ["distance_km", "elevation_m", "calories", "incline_pct", "weight", "steps"]:
         df[c] = pd.to_numeric(df[c], errors="coerce")
-    return df
+    return df, rev
 
 
-@st.cache_data
-def load_weights(mtime: float) -> pd.DataFrame:
-    df = pd.read_csv(WEIGHT_FILE)
+@st.cache_data(ttl=300, show_spinner=False)
+def load_weights(location: str) -> tuple[pd.DataFrame, str | None]:
+    data, rev = storage.read(WEIGHT_NAME, seed_bytes(WEIGHT_NAME, WEIGHT_COLUMNS))
+    df = pd.read_csv(io.BytesIO(data))
     df["date"] = pd.to_datetime(df["date"]).dt.date
     if "notes" not in df.columns:
         df["notes"] = ""
     df["notes"] = df["notes"].fillna("").astype(str)
-    return df.sort_values("date")
+    return df[WEIGHT_COLUMNS].sort_values("date"), rev
 
 
-def save_log(df: pd.DataFrame) -> None:
-    out = df[COLUMNS].copy().sort_values(["date", "session"], kind="stable")
-    out.to_csv(LOG_FILE, index=False)
+def _save(name: str, df: pd.DataFrame, rev: str | None) -> bool:
+    """Write a CSV to storage. Returns False (and shows why) if it could not be saved."""
+    try:
+        storage.write(name, df.to_csv(index=False).encode(), rev)
+    except storage.ConflictError:
+        st.error(
+            f"{name} was changed in Dropbox after this page loaded, so your change was NOT saved "
+            "(to avoid overwriting the newer version). Press 'Reload data' in the sidebar and try again."
+        )
+        return False
+    except Exception as err:  # network / auth problems
+        st.error(f"Could not save {name}: {err}")
+        return False
     st.cache_data.clear()
+    return True
 
 
-def save_weights(df: pd.DataFrame) -> None:
-    df.sort_values("date").to_csv(WEIGHT_FILE, index=False)
-    st.cache_data.clear()
+def save_log(df: pd.DataFrame) -> bool:
+    return _save(LOG_NAME, df[COLUMNS].sort_values(["date", "session"], kind="stable"), log_rev)
+
+
+def save_weights(df: pd.DataFrame) -> bool:
+    return _save(WEIGHT_NAME, df[WEIGHT_COLUMNS].sort_values("date"), weights_rev)
 
 
 def enrich(df: pd.DataFrame) -> pd.DataFrame:
@@ -156,19 +219,26 @@ def bmi(weight_kg: float) -> float:
 
 
 # --------------------------------------------------------------------------- load
-if not LOG_FILE.exists():
-    DATA_DIR.mkdir(exist_ok=True)
-    pd.DataFrame(columns=COLUMNS).to_csv(LOG_FILE, index=False)
-if not WEIGHT_FILE.exists():
-    pd.DataFrame(columns=["date", "weight_kg", "notes"]).to_csv(WEIGHT_FILE, index=False)
-
-raw = load_log(LOG_FILE.stat().st_mtime)
-weights = load_weights(WEIGHT_FILE.stat().st_mtime)
+location = storage.location_label()
+try:
+    raw, log_rev = load_log(location)
+    weights, weights_rev = load_weights(location)
+except Exception as err:
+    st.error(f"Could not load your data from {location}.\n\n{err}")
+    st.info("Check the [dropbox] settings in your Streamlit secrets (see README).")
+    st.stop()
 log = enrich(raw)
 
 # --------------------------------------------------------------------------- sidebar
 st.sidebar.title("🏋️ Exercise Tracker")
 st.sidebar.caption(f"Age {BIRTH_AGE_NOTE} · Height {HEIGHT_CM} cm")
+if storage.backend() == "dropbox":
+    st.sidebar.success(f"Saving to {location}", icon="☁️")
+else:
+    st.sidebar.warning("Saving to local files only - Dropbox is not set up (see README).", icon="💾")
+if st.sidebar.button("🔄 Reload data", help="Fetch the latest version of your files"):
+    st.cache_data.clear()
+    st.rerun()
 if not weights.empty:
     latest = weights.iloc[-1]
     st.sidebar.metric(
@@ -194,8 +264,9 @@ st.sidebar.caption(
 view = log[(log["date"] >= start) & (log["date"] <= end)]
 active = view[view["category"] != "Rest"]
 
-tab_overview, tab_cardio, tab_strength, tab_body, tab_add, tab_data = st.tabs(
-    ["📊 Overview", "🚣 Cardio", "💪 Strength", "⚖️ Body", "➕ Log workout", "🗂️ Data"]
+# "Log" comes first so it is the tab you land on when opening the app on a phone at the gym.
+tab_add, tab_overview, tab_cardio, tab_strength, tab_body, tab_data = st.tabs(
+    ["➕ Log", "📊 Overview", "🚣 Cardio", "💪 Strength", "⚖️ Body", "🗂️ Data"]
 )
 
 # --------------------------------------------------------------------------- overview
@@ -203,7 +274,7 @@ with tab_overview:
     days = (end - start).days + 1
     active_days = active["date"].nunique()
     moving = active[active["category"] != "Strength"]
-    c1, c2, c3, c4, c5 = st.columns(5)
+    c1, c2, c3, c4, c5 = metric_cols(5)
     c1.metric("Active days", f"{active_days} / {days}")
     c2.metric("Timed activity", f"{moving['minutes'].sum() / 60:.1f} h",
               help="Sum of recorded durations (strength sets are not timed).")
@@ -231,7 +302,7 @@ with tab_overview:
         alt.Chart(weekly).mark_bar().encode(
             x=alt.X("week:T", title="Week starting"),
             y=alt.Y("minutes:Q", title="Minutes"),
-            color=alt.Color("category:N", title="Category"),
+            color=alt.Color("category:N", title=None, legend=alt.Legend(orient="bottom")),
             tooltip=["week:T", "category:N", alt.Tooltip("minutes:Q", format=".0f")],
         ),
         width="stretch",
@@ -314,7 +385,7 @@ with tab_cardio:
         act = st.selectbox("Activity", options, index=default)
         a = timed[timed["activity"] == act].copy()
 
-        c1, c2, c3, c4 = st.columns(4)
+        c1, c2, c3, c4 = metric_cols(4)
         c1.metric("Sessions", len(a))
         c2.metric("Total time", fmt_minutes(a["minutes"].sum()) or "—")
         c3.metric("Total distance", f"{a['distance_km'].sum():.2f} km")
@@ -406,7 +477,7 @@ with tab_strength:
         per_day["date_t"] = pd.to_datetime(per_day["date"])
 
         logged_units = sorted(set(e["unit"]) - {""})
-        c1, c2, c3 = st.columns(3)
+        c1, c2, c3 = metric_cols(3)
         best = e.loc[e[wcol].idxmax()] if e[wcol].notna().any() else None
         c1.metric("Heaviest", f"{best[wcol]:.1f} {weight_unit}" if best is not None else "—",
                   help=None if best is None else
@@ -460,7 +531,7 @@ with tab_body:
         w["BMI"] = w["weight_kg"].map(bmi).round(1)
         w["weight_lbs"] = (w["weight_kg"] * LBS_PER_KG).round(1)
         w["date_t"] = pd.to_datetime(w["date"])
-        c1, c2, c3 = st.columns(3)
+        c1, c2, c3 = metric_cols(3)
         c1.metric("Latest", f"{w.iloc[-1].weight_kg:.1f} kg",
                   delta=f"{w.iloc[-1].weight_kg - w.iloc[0].weight_kg:+.1f} kg since {w.iloc[0].date:%d %b}",
                   delta_color="inverse")
@@ -485,15 +556,20 @@ with tab_body:
         wnote = c3.text_input("Notes", key="w_notes")
         if st.form_submit_button("Save weigh-in"):
             new = pd.concat([weights, pd.DataFrame([{"date": wd, "weight_kg": wkg, "notes": wnote}])])
-            save_weights(new)
-            st.success(f"Saved {wkg:.1f} kg for {wd:%d %b %Y}")
-            st.rerun()
+            if save_weights(new):
+                st.toast(f"Saved {wkg:.1f} kg for {wd:%d %b %Y}")
+                st.rerun()
 
 # --------------------------------------------------------------------------- add workout
 with tab_add:
     st.subheader("Log a workout")
-    known = {cat: sorted(set(DEFAULT_ACTIVITIES.get(cat, [])) | set(raw.loc[raw.category == cat, "activity"]))
-             for cat in CATEGORIES}
+    # Most-used activities first, so the usual one is a single tap away.
+    usage = raw.groupby("activity")["date"].nunique()
+    known = {
+        cat: sorted(set(DEFAULT_ACTIVITIES.get(cat, [])) | set(raw.loc[raw.category == cat, "activity"]),
+                    key=lambda a: (-usage.get(a, 0), a))
+        for cat in CATEGORIES
+    }
     c1, c2, c3 = st.columns(3)
     cat = c1.selectbox("Category", CATEGORIES)
     choice = c2.selectbox("Activity / exercise", known[cat] + ["Other…"])
@@ -512,19 +588,18 @@ with tab_add:
             reps_text = c3.text_input("Reps", placeholder="e.g. 10,10,8  or  3x10  or  2x10, 1x5")
             st.caption("Used more than one weight? Save each weight as its own entry.")
         elif cat != "Rest":
-            c1, c2, c3, c4 = st.columns(4)
-            hours = c1.number_input("Hours", 0, 12, 0)
-            mins = c2.number_input("Minutes", 0, 59, 0)
-            secs = c3.number_input("Seconds", 0, 59, 0)
-            dist = c4.text_input("Distance (km)", placeholder="e.g. 5.0 (rowing 5000m = 5.0)")
-            c1, c2, c3, c4 = st.columns(4)
-            cals = c1.text_input("Machine calories")
-            level = c2.text_input("Level", placeholder="e.g. 10 or 5-10")
-            incline = c3.text_input("Incline %")
-            elev = c4.text_input("Elevation (m)")
-            steps = st.text_input("Step count (optional)")
-        session = st.text_input("Session (optional)", placeholder="e.g. Morning / Evening")
+            c1, c2, c3 = st.columns(3)
+            time_text = c1.text_input("Time (min:sec)", placeholder="e.g. 37:43  or  1:05:00 for 1h05")
+            dist = c2.text_input("Distance (km)", placeholder="e.g. 5.0 (rowing 5000m = 5.0)")
+            cals = c3.text_input("Machine calories")
+            with st.expander("More: level, incline, elevation, steps"):
+                c1, c2 = st.columns(2)
+                level = c1.text_input("Level", placeholder="e.g. 10 or 5-10")
+                incline = c2.text_input("Incline %")
+                elev = c1.text_input("Elevation (m)")
+                steps = c2.text_input("Step count")
         notes = st.text_input("Notes")
+        session = st.text_input("Session (optional)", placeholder="e.g. Morning / Evening")
         submitted = st.form_submit_button("Save entry", type="primary")
 
     if submitted:
@@ -538,9 +613,10 @@ with tab_add:
                     raise ValueError("Please enter at least one set of reps.")
                 row.update(weight=weight if unit != "bw" else None, unit=unit, reps=reps)
             elif cat != "Rest":
-                total_min = hours * 60 + mins
-                if total_min or secs:
-                    row["duration"] = f"{total_min}:{secs:02d}"
+                if time_text.strip():
+                    if not re.fullmatch(r"\d+(:[0-5]?\d){1,2}|\d+", time_text.strip()):
+                        raise ValueError("Time should look like 37:43 (min:sec) or 1:05:00 (h:min:sec).")
+                    row["duration"] = fmt_minutes(parse_duration(time_text.replace(" ", "")))
 
                 def num(v, label):
                     if not str(v).strip():
@@ -554,9 +630,9 @@ with tab_add:
                            level=level, incline_pct=num(incline, "Incline"),
                            elevation_m=num(elev, "Elevation"), steps=num(steps, "Steps"))
             new = pd.concat([raw, pd.DataFrame([row])], ignore_index=True)
-            save_log(new)
-            st.success(f"Saved: {activity} on {the_date:%d %b %Y}")
-            st.rerun()
+            if save_log(new):
+                st.toast(f"Saved: {activity} on {the_date:%d %b %Y}")
+                st.rerun()
         except ValueError as err:
             st.error(str(err))
 
@@ -583,9 +659,9 @@ with tab_data:
     )
     c1, c2, c3 = st.columns(3)
     if c1.button("💾 Save changes", type="primary"):
-        save_log(edited)
-        st.success("Saved.")
-        st.rerun()
+        if save_log(edited):
+            st.toast("Saved.")
+            st.rerun()
     c2.download_button("⬇️ Download exercise log (CSV)", raw.to_csv(index=False), "exercise_log.csv", "text/csv")
     c3.download_button("⬇️ Download body weights (CSV)", weights.to_csv(index=False), "body_weight.csv", "text/csv")
 
@@ -597,10 +673,9 @@ with tab_data:
             if missing:
                 st.error(f"File is missing columns: {', '.join(sorted(missing))}")
             else:
-                df_up[COLUMNS].to_csv(LOG_FILE, index=False)
-                st.cache_data.clear()
-                st.success("Exercise log replaced.")
-                st.rerun()
+                if _save(LOG_NAME, df_up[COLUMNS], log_rev):
+                    st.toast("Exercise log replaced.")
+                    st.rerun()
 
     flagged = raw[raw["notes"].str.contains("assumed|verify|truncated|Logged as", case=False)]
     if not flagged.empty:
