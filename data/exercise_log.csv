@@ -1,0 +1,515 @@
+date,session,category,activity,duration,distance_km,elevation_m,calories,level,incline_pct,weight,unit,reps,steps,notes
+2026-06-01,,Cardio,Cross trainer,,,,100,10,,,,,,No duration recorded
+2026-06-01,,Cardio,Rowing machine,8:24,2.0,,,,,,,,,
+2026-06-01,,Cardio,Exercise bike,20:00,,,497.6,10,,,,,,
+2026-06-01,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-01,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-01,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-01,,Strength,Lat pulldown,,,,,,,80,lbs,10,,
+2026-06-01,,Strength,Lat pulldown,,,,,,,100,lbs,15,,
+2026-06-01,,Strength,Lat pulldown,,,,,,,110,lbs,3,,
+2026-06-01,,Cardio,Treadmill,12:00,,,,,5,,,,,5 km/h
+2026-06-01,,Cardio,Stair climber,3:00,,,,5,,,,,,
+2026-06-02,,Cardio,Cross trainer,7:20,,,110,10,,,,,,
+2026-06-02,,Cardio,Rowing machine,8:23,2.0,,,,,,,,,
+2026-06-02,,Cardio,Exercise bike,25:00,,,467.1,10,,,,,,
+2026-06-02,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-02,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-02,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-02,,Strength,Lat pulldown,,,,,,,80,lbs,10,,
+2026-06-02,,Strength,Lat pulldown,,,,,,,100,lbs,15,,
+2026-06-02,,Strength,Lat pulldown,,,,,,,110,lbs,5,,
+2026-06-02,,Cardio,Treadmill,13:00,,,128.1,,5,,,,,5 km/h
+2026-06-02,,Cardio,Stair climber,3:00,,,,5,,,,,,
+2026-06-03,,Cardio,Cross trainer,7:40,,,110,10,,,,,,
+2026-06-03,,Cardio,Rowing machine,8:32,2.0,,,,,,,,,
+2026-06-03,,Cardio,Treadmill,10:00,,,99.0,,5,,,,,5 km/h
+2026-06-03,,Cardio,Stair climber,3:16,,,,5,,,,,,
+2026-06-03,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-03,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-03,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-03,,Strength,Seated chest press,,,,,,,100,lbs,6,,
+2026-06-03,,Cardio,Exercise bike,5:00,,,82.6,10,,,,,,
+2026-06-04,,Sport,Squash,35:00,,,,,,,,,,
+2026-06-04,,Cardio,Cross trainer,7:48,,,120,10,,,,,,
+2026-06-04,,Cardio,Rowing machine,8:18,2.0,,,,,,,,,
+2026-06-04,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-04,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-04,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-04,,Cardio,Stair climber,3:00,,,,5,,,,,,
+2026-06-04,,Cardio,Exercise bike,7:00,,,111.4,10,,,,,,
+2026-06-04,,Cardio,Treadmill,4:24,,,32.6,,5,,,,,5 km/h
+2026-06-05,,Cardio,Cross trainer,7:34,,,120,10,,,,,,
+2026-06-05,,Cardio,Rowing machine,8:12,2.0,,,,,,,,,
+2026-06-05,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-05,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-05,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-05,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,
+2026-06-05,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,
+2026-06-05,,Strength,Bicep curl (machine),,,,,,,60,lbs,10,,
+2026-06-05,,Cardio,Treadmill,20:00,,,89.1,,5,,,,,5 km/h
+2026-06-05,,Cardio,Exercise bike,7:00,,,126.4,10,,,,,,
+2026-06-07,,Cardio,Cross trainer,9:30,,,150,10,,,,,,
+2026-06-07,,Cardio,Rowing machine,9:15,2.0,,,,,,,,,
+2026-06-07,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,
+2026-06-07,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,
+2026-06-07,,Strength,Bicep curl (machine),,,,,,,60,lbs,10,,
+2026-06-07,,Strength,Tricep curl,,,,,,,20,lbs,10,,
+2026-06-07,,Strength,Tricep curl,,,,,,,40,lbs,10,,
+2026-06-07,,Strength,Tricep curl,,,,,,,60,lbs,10,,
+2026-06-07,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-07,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-07,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-07,,Cardio,Treadmill,20:00,,,154.7,,5,,,,,5 km/h
+2026-06-07,,Cardio,Exercise bike,12:00,,,200,10,,,,,,
+2026-06-08,,Strength,Tricep curl,,,,,,,20,lbs,10,,Pos 3
+2026-06-08,,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-06-08,,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-06-08,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2
+2026-06-08,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2
+2026-06-08,,Strength,Bicep curl (machine),,,,,,,60,lbs,10,,Pos 2
+2026-06-08,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-08,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-08,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-08,,Strength,Seated chest press,,,,,,,100,lbs,5,,
+2026-06-08,,Strength,Lat pulldown,,,,,,,60,lbs,10,,
+2026-06-08,,Strength,Lat pulldown,,,,,,,70,lbs,10,,
+2026-06-08,,Strength,Lat pulldown,,,,,,,90,lbs,10,,
+2026-06-08,,Strength,Lat pulldown,,,,,,,110,lbs,10,,
+2026-06-08,,Cardio,Rowing machine,8:39,2.0,,,,,,,,,
+2026-06-08,,Cardio,Rowing machine,22:58,5.0,,,,,,,,,
+2026-06-08,,Cardio,Exercise bike,11:00,,,194.8,10,,,,,,
+2026-06-09,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2
+2026-06-09,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2
+2026-06-09,,Strength,Bicep curl (machine),,,,,,,60,lbs,10,,Pos 2
+2026-06-09,,Strength,Tricep curl,,,,,,,20,lbs,10,,Pos 3
+2026-06-09,,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-06-09,,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-06-09,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-09,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-09,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-09,,Strength,Seated chest press,,,,,,,100,lbs,6,,
+2026-06-09,,Strength,Shoulder press,,,,,,,40,lbs,10,,
+2026-06-09,,Strength,Shoulder press,,,,,,,60,lbs,4,,
+2026-06-09,,Cardio,Rowing machine,8:16,2.0,,,,,,,,,
+2026-06-09,,Strength,Kettlebell overhead lift,,,,,,,12,kg,30,,Lift from chest
+2026-06-09,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2 (second round)
+2026-06-09,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2 (second round)
+2026-06-09,,Strength,Bicep curl (machine),,,,,,,60,lbs,5,,Pos 2 (second round)
+2026-06-10,Morning,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2
+2026-06-10,Morning,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2
+2026-06-10,Morning,Strength,Bicep curl (machine),,,,,,,60,lbs,10,,Pos 2
+2026-06-10,Morning,Strength,Tricep curl,,,,,,,20,lbs,10,,Pos 3
+2026-06-10,Morning,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-06-10,Morning,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-06-10,Morning,Strength,Tricep curl,,,,,,,80,lbs,3,,Pos 3
+2026-06-10,Morning,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-10,Morning,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-10,Morning,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-10,Morning,Strength,Seated chest press,,,,,,,100,lbs,6,,
+2026-06-10,Morning,Strength,Shoulder press,,,,,,,40,lbs,10,,
+2026-06-10,Morning,Strength,Shoulder press,,,,,,,60,lbs,5,,
+2026-06-10,Morning,Strength,Lat pulldown,,,,,,,60,lbs,10,,
+2026-06-10,Morning,Strength,Lat pulldown,,,,,,,70,lbs,10,,
+2026-06-10,Morning,Strength,Lat pulldown,,,,,,,90,lbs,10,,
+2026-06-10,Morning,Strength,Lat pulldown,,,,,,,110,lbs,3,,
+2026-06-10,Morning,Strength,Kettlebell overhead lift,,,,,,,12,kg,30,,Lift from chest
+2026-06-10,Morning,Cardio,Rowing machine,4:26,1.0,,,,,,,,,
+2026-06-10,Evening,Cardio,Cross trainer,20:16,,,300,10,,,,,,
+2026-06-10,Evening,Strength,Kettlebell overhead lift,,,,,,,12,kg,30,,Lift from chest
+2026-06-10,Evening,Strength,Bicep curl (dumbbell),,,,,,,7.5,kg,10,,Each arm
+2026-06-10,Evening,Cardio,Stair climber,5:42,,,192,5,,,,,,Start at 5
+2026-06-10,Evening,Strength,Leg extension,,,,,,,50,lbs,10,,Pos 4
+2026-06-10,Evening,Strength,Leg extension,,,,,,,70,lbs,10,,Pos 4
+2026-06-10,Evening,Strength,Leg extension,,,,,,,90,lbs,10,,Pos 4
+2026-06-10,Evening,Strength,Leg extension,,,,,,,110,lbs,10,,Pos 4
+2026-06-10,Evening,Strength,Leg curl,,,,,,,50,lbs,10,,Pos 5
+2026-06-10,Evening,Strength,Leg curl,,,,,,,70,lbs,10,,Pos 5
+2026-06-10,Evening,Strength,Leg curl,,,,,,,90,lbs,10,,Pos 5
+2026-06-10,Evening,Strength,Leg curl,,,,,,,110,lbs,10,,Pos 5
+2026-06-10,Evening,Strength,Leg curl,,,,,,,130,lbs,10,,Pos 5
+2026-06-11,,Sport,Squash,42:00,,,,,,,,,,
+2026-06-12,,Cardio,Exercise bike,40:00,,,754.0,10,,,,,,
+2026-06-13,,Outdoor,Walk,,10,,,,,,,,,In the park
+2026-06-14,,Strength,Bicep curl (dumbbell),,,,,,,6,kg,30,,Each arm
+2026-06-14,,Strength,Kettlebell overhead lift,,,,,,,12,kg,30,,Lift from chest
+2026-06-14,,Strength,Tricep curl,,,,,,,20,lbs,10,,Pos 3
+2026-06-14,,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-06-14,,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-06-14,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2
+2026-06-14,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2
+2026-06-14,,Strength,Bicep curl (machine),,,,,,,60,lbs,2,,Pos 2
+2026-06-14,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-14,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-14,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-14,,Strength,Seated chest press,,,,,,,100,lbs,2,,
+2026-06-14,,Strength,Shoulder press,,,,,,,40,lbs,10,,
+2026-06-14,,Strength,Lat pulldown,,,,,,,60,lbs,10,,
+2026-06-14,,Strength,Lat pulldown,,,,,,,70,lbs,10,,
+2026-06-14,,Strength,Lat pulldown,,,,,,,90,lbs,10,,
+2026-06-14,,Cardio,Rowing machine,9:01,2.0,,,,,,,,,
+2026-06-14,,Strength,Leg curl,,,,,,,50,lbs,10,,Pos 5
+2026-06-14,,Strength,Leg curl,,,,,,,70,lbs,10,,Pos 5
+2026-06-14,,Strength,Leg curl,,,,,,,90,lbs,10,,Pos 5
+2026-06-14,,Strength,Leg curl,,,,,,,110,lbs,10,,Pos 5
+2026-06-14,,Strength,Leg curl,,,,,,,130,lbs,10,,Pos 5
+2026-06-14,,Strength,Leg extension,,,,,,,50,lbs,10,,Pos 4
+2026-06-14,,Strength,Leg extension,,,,,,,70,lbs,10,,Pos 4
+2026-06-14,,Strength,Leg extension,,,,,,,90,lbs,10,,Pos 4
+2026-06-14,,Strength,Leg extension,,,,,,,110,lbs,10,,Pos 4
+2026-06-15,,Sport,Squash,45:00,,,,,,,,,,
+2026-06-16,,Strength,Kettlebell overhead lift,,,,,,,12,kg,30,,Lift from chest
+2026-06-16,,Cardio,Treadmill,12:36,1.2,,,,0,,,,,Flat
+2026-06-16,,Cardio,Stair climber,8:21,,,,5,,,,,,Start at 5
+2026-06-17,,Rest,Rest day,,,,,,,,,,,
+2026-06-18,,Outdoor,Canoeing,90:00,,,,,,,,,,Gentle
+2026-06-19,,Outdoor,Walk,,,,,,,,,,17600,Daily step count only
+2026-06-20,,Outdoor,Walk,,,,,,,,,,14700,Country walks
+2026-06-21,,Outdoor,Walk,180:00,,,,,,,,,24500,"Snowdonia, lots of climbing (steps = whole day)"
+2026-06-22,,Rest,Rest day,,,,,,,,,,,
+2026-06-23,,Strength,Kettlebell overhead lift,,,,,,,12,kg,40,,Lift from chest
+2026-06-23,,Strength,Bicep curl (dumbbell),,,,,,,7,kg,30,,Each arm
+2026-06-23,,Strength,Tricep curl,,,,,,,20,lbs,10,,Pos 3
+2026-06-23,,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-06-23,,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-06-23,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2
+2026-06-23,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2
+2026-06-23,,Strength,Bicep curl (machine),,,,,,,60,lbs,2,,Pos 2
+2026-06-23,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-23,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-23,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-23,,Cardio,Rowing machine,8:22,2.0,,,,,,,,,
+2026-06-24,,Rest,Rest day,,,,,,,,,,,
+2026-06-25,,Rest,Rest day,,,,,,,,,,,
+2026-06-26,,Strength,Kettlebell overhead lift,,,,,,,16,kg,30,,Lift from chest
+2026-06-26,,Strength,Bicep curl (dumbbell),,,,,,,10,kg,20,,Each arm
+2026-06-26,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2
+2026-06-26,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2
+2026-06-26,,Strength,Bicep curl (machine),,,,,,,60,lbs,3,,Pos 2
+2026-06-26,,Strength,Tricep curl,,,,,,,20,lbs,10,,Pos 3
+2026-06-26,,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-06-26,,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-06-26,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-26,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-26,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-26,,Strength,Leg extension,,,,,,,50,lbs,10,,Pos 4
+2026-06-26,,Strength,Leg extension,,,,,,,70,lbs,10,,Pos 4
+2026-06-26,,Strength,Leg extension,,,,,,,90,lbs,10,,Pos 4
+2026-06-26,,Strength,Leg extension,,,,,,,110,lbs,10,,Pos 4
+2026-06-26,,Strength,Leg curl,,,,,,,50,lbs,10,,Pos 5
+2026-06-26,,Strength,Leg curl,,,,,,,70,lbs,10,,Pos 5
+2026-06-26,,Strength,Leg curl,,,,,,,90,lbs,10,,Pos 5
+2026-06-26,,Strength,Leg curl,,,,,,,110,lbs,10,,Pos 5
+2026-06-26,,Strength,Leg curl,,,,,,,130,lbs,10,,Pos 5
+2026-06-26,,Cardio,Rowing machine,8:29,2.0,,,,,,,,,
+2026-06-27,,Cardio,Rowing machine,22:53,5.0,,,,,,,,,
+2026-06-27,,Cardio,Exercise bike,15:00,7.2,,193,,,,,,,Easy
+2026-06-28,,Sport,Squash,45:00,,,,,,,,,,
+2026-06-28,,Cardio,Exercise bike,25:00,12.97,,442,,,,,,,
+2026-06-29,,Strength,Kettlebell overhead lift,,,,,,,16,kg,30,,Lift from chest
+2026-06-29,,Strength,Bicep curl (dumbbell),,,,,,,10,kg,10,,Each arm
+2026-06-29,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-06-29,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-06-29,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-06-29,,Cardio,Rowing machine,22:54,5.0,,,,,,,,,
+2026-06-30,,Cardio,Rowing machine,8:21,2.0,,,,,,,,,
+2026-06-30,,Cardio,Treadmill,20:00,2.1,,188.3,,5,,,,,
+2026-07-01,,Strength,Kettlebell overhead lift,,,,,,,16,kg,30,,Lift from chest
+2026-07-01,,Strength,Bicep curl (dumbbell),,,,,,,10,kg,20,,Each arm
+2026-07-01,,Strength,Bicep curl (machine),,,,,,,20,lbs,10,,Pos 2
+2026-07-01,,Strength,Bicep curl (machine),,,,,,,40,lbs,10,,Pos 2
+2026-07-01,,Strength,Bicep curl (machine),,,,,,,60,lbs,3,,Pos 2
+2026-07-01,,Strength,Tricep curl,,,,,,,20,lbs,10,,Pos 3
+2026-07-01,,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-07-01,,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-07-01,,Strength,Seated chest press,,,,,,,40,lbs,10,,
+2026-07-01,,Strength,Seated chest press,,,,,,,60,lbs,10,,
+2026-07-01,,Strength,Seated chest press,,,,,,,80,lbs,10,,
+2026-07-01,,Strength,Leg extension,,,,,,,50,lbs,10,,Pos 4
+2026-07-01,,Strength,Leg extension,,,,,,,70,lbs,10,,Pos 4
+2026-07-01,,Strength,Leg extension,,,,,,,90,lbs,10,,Pos 4
+2026-07-01,,Strength,Leg extension,,,,,,,110,lbs,10,,Pos 4
+2026-07-01,,Strength,Leg curl,,,,,,,50,lbs,10,,Pos 5
+2026-07-01,,Strength,Leg curl,,,,,,,70,lbs,10,,Pos 5
+2026-07-01,,Strength,Leg curl,,,,,,,90,lbs,10,,Pos 5
+2026-07-01,,Strength,Leg curl,,,,,,,110,lbs,10,,Pos 5
+2026-07-01,,Strength,Leg curl,,,,,,,130,lbs,10,,Pos 5
+2026-07-01,,Cardio,Rowing machine,27:44,6.0,,,,,,,,,
+2026-07-02,,Cardio,Rowing machine,47:25,10.0,,,,,,,,,
+2026-07-03,,Cardio,Treadmill,19:24,2.0,,156.9,,5,,,,,
+2026-07-03,,Cardio,Exercise bike,10:02,5.0,,177.5,,,,,,,
+2026-07-04,,Rest,Rest day,,,,,,,,,,,
+2026-07-05,,Cardio,Rowing machine,28:07,6.119,,,,,,,,,
+2026-07-06,,Strength,Kettlebell overhead lift,,,,,,,16,kg,30,,Lift from chest
+2026-07-06,,Strength,Bicep curl (bar),,,,,,,25,kg,15,,Both hands
+2026-07-06,,Strength,Tricep curl,,,,,,,40,lbs,10,,Pos 3
+2026-07-06,,Strength,Tricep curl,,,,,,,60,lbs,10,,Pos 3
+2026-07-06,,Strength,Tricep curl,,,,,,,80,lbs,5,,Pos 3
+2026-07-06,,Strength,Seated chest press,,,,,,,100,lbs,10,,
+2026-07-06,,Cardio,Rowing machine,8:24,2.0,,,,,,,,,
+2026-07-07,,Rest,Rest day,,,,,,,,,,,
+2026-07-08,,Cardio,Treadmill,30:00,3.0,,,,6,,,,,
+2026-07-08,,Outdoor,Kayaking,82:00,6.85,,,,,,,,,Thames
+2026-07-09,,Cardio,Treadmill,60:00,6.0,,,,5,,,,,
+2026-07-10,,Rest,Rest day,,,,,,,,,,,
+2026-07-11,,Outdoor,Hike,200:00,11.8,596,,,,,,,,
+2026-07-12,,Outdoor,Hike,86:00,5.87,135,,,,,,,,
+2026-07-13,,Rest,Rest day,,,,,,,,,,,
+2026-07-14,,Cardio,Cross trainer,20:00,2.1,,280.3,,,,,,,
+2026-07-14,,Cardio,Treadmill,13:00,1.1,,,,6,,,,,
+2026-07-14,,Cardio,Cross trainer,14:00,1.4,,206.9,,,,,,,
+2026-07-15,,Sport,Squash,45:00,,,,,,,,,,
+2026-07-16,,Rest,Rest day,,,,,,,,,,,
+2026-07-17,,Rest,Rest day,,,,,,,,,,,
+2026-07-18,,Cardio,Treadmill,40:00,4.0,,397,,7,,,,,
+2026-07-19,,Cardio,Exercise bike,40:00,19.1,,748.3,,,,,,,
+2026-07-20,,Cardio,Treadmill,60:00,6.0,,577.8,,6,,,,,
+2026-07-21,,Rest,Rest day,,,,,,,,,,,
+2026-07-22,,Cardio,Treadmill,37:00,,,,,7.0,,,,,
+2026-07-22,,Outdoor,Kayaking,90:00,,,,,,,,,,Thames
+2026-07-23,,Sport,Squash,35:00,,,,,,,,,,
+2026-07-24,,Cardio,Rowing machine,23:24,5.0,,,,,,,,,Logged as '5000n' - assumed 5000m
+2026-07-24,,Cardio,Treadmill,13:00,1.2,,,,7,,,,,
+2026-07-25,,Cardio,Treadmill,16:20,2.5,,,,,,,,,
+2026-07-25,,Cardio,Cross trainer,9:46,1.0,,108.6,,,,,,,
+2026-07-26,,Cardio,Exercise bike,30:06,15.0,,578.5,,,,,,,
+2026-07-27,,Sport,Squash,45:00,,,,,,,,,,
+2026-07-28,,Cardio,Exercise bike,30:00,16.6,,524.1,,,,,,,
+2026-07-29,,Sport,Squash,45:00,,,,,,,,,,
+2026-07-29,,Outdoor,Kayaking,99:00,,,,,,,,,,Thames
+2026-07-31,,Strength,Kettlebell overhead lift,,,,,,,12,kg,10;10;10,,
+2026-07-31,,Cardio,Exercise bike,19:08,10.0,,,,,,,,,
+2026-08-01,,Rest,Rest day,,,,,,,,,,,
+2026-08-02,,Cardio,Rowing machine,13:31,3.0,,,,,,,,,
+2026-08-02,,Cardio,Treadmill,9:01,1.0,,,,,,,,,
+2026-08-03,,Cardio,Treadmill,21:35,3.2,,,,,,,,,
+2026-08-04,,Cardio,Rowing machine,17:58,4.0,,,,,,,,,
+2026-08-04,,Strength,Kettlebell overhead lift,,,,,,,16,kg,10;10;10,,
+2026-08-04,,Strength,Bicep curl (dumbbell),,,,,,,9,kg,20;20,,Each arm
+2026-08-05,,Outdoor,Kayaking,90:00,,,,,,,,,,River
+2026-08-06,,Cardio,Cross trainer,9:12,1.0,,131,,,,,,,
+2026-08-06,,Cardio,Exercise bike,10:00,4.88,,,,,,,,,
+2026-08-06,,Cardio,Rowing machine,13:48,3.0,,,,,,,,,
+2026-08-07,,Strength,Kettlebell overhead lift,,,,,,,16,kg,10;10;10,,
+2026-08-07,,Strength,Bicep curl (bar),,,,,,,20,kg,10;10;10,,
+2026-08-07,,Strength,Tricep extension,,,,,,,60,lbs,10,,
+2026-08-07,,Strength,Tricep extension,,,,,,,80,lbs,10,,
+2026-08-07,,Strength,Lat pulldown,,,,,,,50,lbs,10,,
+2026-08-07,,Strength,Lat pulldown,,,,,,,60,lbs,10,,
+2026-08-07,,Strength,Lat pulldown,,,,,,,70,lbs,10,,
+2026-08-07,,Strength,Lat pulldown,,,,,,,90,lbs,10,,
+2026-08-07,,Strength,Seated chest press,,,,,,,60,lbs,20,,
+2026-08-07,,Strength,Seated chest press,,,,,,,80,lbs,6,,
+2026-08-08,,Rest,Rest day,,,,,,,,,,,
+2026-08-09,,Outdoor,Walk,,11.7,,,,,,,,,
+2026-08-10,,Rest,Rest day,,,,,,,,,,,
+2026-08-11,,Cardio,Rowing machine,23:10,5.0,,,,,,,,,
+2026-08-12,,Outdoor,Kayaking,99:00,,,,,,,,,,River
+2026-08-13,,Strength,Kettlebell overhead lift,,,,,,,16,kg,10;10;10;10,,
+2026-08-13,,Strength,Bicep curl (bar),,,,,,,25,kg,10;10,,
+2026-08-13,,Strength,Lat pulldown,,,,,,,60,lbs,10,,
+2026-08-13,,Strength,Lat pulldown,,,,,,,70,lbs,10,,
+2026-08-13,,Strength,Lat pulldown,,,,,,,90,lbs,10,,
+2026-08-13,,Cardio,Rowing machine,30:00,6.333,,,,,,,,,
+2026-08-14,,Rest,Rest day,,,,,,,,,,,
+2026-08-15,,Outdoor,Hike,114:00,7.1,369,,,,,,,,
+2026-08-16,,Strength,Kettlebell overhead lift,,,,,,,16,kg,10;10;10,,
+2026-08-16,,Strength,Bicep curl (bar),,,,,,,25,kg,10;10,,
+2026-08-16,,Strength,Tricep extension,,,,,,,60,lbs,10,,
+2026-08-16,,Strength,Tricep extension,,,,,,,80,lbs,10,,
+2026-08-16,,Strength,Low row,,,,,,,90,lbs,10;10,,
+2026-08-16,,Strength,Low row,,,,,,,100,lbs,10,,
+2026-08-16,,Strength,Lat pulldown,,,,,,,90,lbs,10,,
+2026-08-16,,Strength,Lat pulldown,,,,,,,110,lbs,3,,
+2026-08-16,,Cardio,Exercise bike,10:09,5.0,,196.6,,,,,,,
+2026-08-17,,Cardio,Rowing machine,49:21,10.0,,,,,,,,,
+2026-08-18,,Cardio,Exercise bike,20:00,11.3,,466.4,,,,,,,
+2026-08-18,,Cardio,Cross trainer,6:00,0.6,,58.9,,,,,,,
+2026-08-18,,Cardio,Rowing machine,4:34,1.0,,,,,,,,,
+2026-08-19,,Cardio,Rowing machine,16:22,4.617,,,,,,,,,"Logged as 16:22 for 4617m = 1:46/500m, much faster than usual - please verify"
+2026-08-19,,Outdoor,Kayaking,100:00,,,,,,,,,,River
+2026-08-20,,Rest,Rest day,,,,,,,,,,,
+2026-08-21,,Strength,Kettlebell overhead lift,,,,,,,16,kg,10;10;10;10,,
+2026-08-21,,Strength,Bicep curl (bar),,,,,,,25,kg,10;10,,
+2026-08-21,,Strength,Lat pulldown,,,,,,,110,lbs,10;10,,
+2026-08-21,,Strength,Low row,,,,,,,110,lbs,10,,
+2026-08-21,,Strength,Seated chest press,,,,,,,80,lbs,10;10,,
+2026-08-21,,Cardio,Rowing machine,11:40,2.5,,,,,,,,,
+2026-08-21,,Cardio,Exercise bike,10:00,5.34,,219.9,,,,,,,
+2026-08-21,,Cardio,Treadmill,20:00,1.99,,178.2,,6,,,,,
+2026-08-22,,Cardio,Rowing machine,35:00,7.5,,,,,,,,,
+2026-08-23,,Cardio,Exercise bike,30:00,16.1,,580.4,,,,,,,
+2026-08-24,,Cardio,Rowing machine,48:01,10.0,,,,,,,,,
+2026-08-25,,Rest,Rest day,,,,,,,,,,,
+2026-08-26,,Cardio,Exercise bike,30:00,16.56,,569.2,,,,,,,
+2026-08-26,,Outdoor,Kayaking,90:00,,,,,,,,,,Thames
+2026-08-27,,Sport,Squash,45:00,,,,,,,,,,
+2026-08-27,,Cardio,Rowing machine,24:40,5.3,,,,,,,,,
+2026-08-27,,Cardio,Exercise bike,12:44,6.9,,226.5,,,,,,,
+2026-08-28,,Cardio,Rowing machine,9:15,2.0,,,,,,,,,
+2026-08-28,,Strength,Bicep curl (bar),,,,,,,25,kg,6;6,,
+2026-08-28,,Cardio,Exercise bike,10:00,5.34,,213.8,,,,,,,
+2026-08-29,,Cardio,Rowing machine,25:42,5.5,,,,,,,,,
+2026-08-30,,Rest,Rest day,,,,,,,,,,,
+2026-08-31,,Cardio,Exercise bike,31:00,17.6,,,,,,,,,
+2026-09-01,,Strength,Kettlebell overhead lift,,,,,,,20,kg,10;7,,
+2026-09-01,,Strength,Bicep curl (bar),,,,,,,25,kg,10;10,,2 handed
+2026-09-01,,Strength,Lat pulldown,,,,,,,110,lbs,6;6,,
+2026-09-02,,Rest,Rest day,,,,,,,,,,,
+2026-09-03,,Outdoor,Cycling (outdoor),80:00,,,,,,,,,,
+2026-09-04,,Rest,Rest day,,,,,,,,,,,
+2026-09-05,,Sport,Padel,75:00,,,,,,,,,,
+2026-09-05,,Outdoor,Cycling (outdoor),120:00,,,,,,,,,,
+2026-09-06,,Rest,Rest day,,,,,,,,,,,
+2026-09-07,,Rest,Rest day,,,,,,,,,,19000,
+2026-09-08,,Rest,Rest day,,,,,,,,,,18000,
+2026-09-09,,Rest,Rest day,,,,,,,,,,,
+2026-09-10,,Rest,Rest day,,,,,,,,,,,
+2026-09-11,,Cardio,Rowing machine,10:40,2.5,,,,,,,,,
+2026-09-11,,Cardio,Exercise bike,10:00,4.96,,205.1,,,,,,,
+2026-09-11,,Cardio,Treadmill,10:00,1.07,,,,5,,,,,
+2026-09-11,,Strength,Bicep curl (bar),,,,,,,20,kg,10,,
+2026-09-11,,Strength,Bicep curl (bar),,,,,,,25,kg,10,,
+2026-09-12,,Strength,Bicep curl (bar),,,,,,,30,kg,7;5,,
+2026-09-12,,Strength,Lat pulldown,,,,,,,110,lbs,10,,
+2026-09-12,,Strength,Lat pulldown,,,,,,,130,lbs,6;5,,
+2026-09-12,,Strength,Tricep extension,,,,,,,80,lbs,7,,
+2026-09-12,,Cardio,Rowing machine,8:14,2.0,,,,,,,,,
+2026-09-12,,Cardio,Exercise bike,15:00,8.11,,276.5,,,,,,,
+2026-09-13,,Strength,Bicep curl (bar),,,,,,,30,kg,7;6,,
+2026-09-13,,Cardio,Rowing machine,15:44,3.553,,,,,,,,,
+2026-09-13,,Cardio,Exercise bike,15:00,7.63,,313.9,,,,,,,
+2026-09-13,,Sport,Squash,45:00,,,,,,,,,,
+2026-09-14,,Strength,Bicep curl (bar),,,,,,,30,kg,7;7;5,,
+2026-09-14,,Strength,Lat pulldown,,,,,,,130,lbs,3;3,,
+2026-09-14,,Strength,Low row,,,,,,,130,lbs,10;7;5,,
+2026-09-14,,Strength,Bicep curl (machine),,,,,,,60,lbs,6,,
+2026-09-14,,Strength,Bicep curl (bar),,,,,,,20,kg,19;19;5,,"Logged as '2x19, 1x5' - please verify (possibly 2x10)"
+2026-09-15,,Cardio,Rowing machine,30:19,6.782,,,,,,,,,
+2026-09-16,,Cardio,Treadmill,20:49,2.0,,,,6.0,,,,,
+2026-09-17,,Cardio,Rowing machine,25:53,5.752,,,,,,,,,
+2026-09-18,,Cardio,Rowing machine,20:00,4.51,,,,,,,,,
+2026-09-18,,Cardio,Exercise bike,15:00,8.2,,,,,,,,,
+2026-09-19,,Cardio,Rowing machine,11:05,2.481,,,,,,,,,
+2026-09-20,,Sport,Squash,35:00,,,,,,,,,,
+2026-09-20,,Cardio,Exercise bike,15:43,8.4,,,,,,,,,
+2026-09-21,,Cardio,Rowing machine,13:06,3.0,,,,,,,,,
+2026-09-21,,Strength,Bicep curl (machine),,,,,,,60,lbs,5;5;5,,
+2026-09-21,,Strength,Tricep extension,,,,,,,60,lbs,10;10;10,,
+2026-09-21,,Strength,Lat pulldown,,,,,,,110,lbs,10,,
+2026-09-22,,Cardio,Rowing machine,17:58,4.065,,,,,,,,,
+2026-09-22,,Cardio,Exercise bike,10:54,5.8,,,,,,,,,
+2026-09-22,,Strength,Bicep curl (machine),,,,,,,60,lbs,10;8,,
+2026-09-22,,Strength,Tricep extension,,,,,,,60,lbs,10;10;10,,
+2026-09-23,,Rest,Rest day,,,,,,,,,,,
+2026-09-24,,Cardio,Rowing machine,22:58,5.0,,,,,,,,,
+2026-09-25,,Rest,Rest day,,,,,,,,,,,
+2026-09-26,,Outdoor,Kayak surfing & coasteering,180:00,,,,,,,,,,
+2026-09-27,,Outdoor,Kayak surfing,90:00,,,,,,,,,,
+2026-09-28,,Cardio,Rowing machine,12:53,3.0,,,,,,,,,
+2026-09-28,,Strength,Bicep curl (bar),,,,,,,25,kg,10;10,,
+2026-09-28,,Cardio,Treadmill,9:15,0.8,,105.4,,6,,,,,
+2026-09-28,,Cardio,Exercise bike,10:00,4.38,,132.1,,,,,,,
+2026-09-29,,Cardio,Rowing machine,22:34,5.115,,,,,,,,,
+2026-09-29,,Cardio,Treadmill,14:00,1.3,,139.1,,6,,,,,
+2026-09-29,,Cardio,Exercise bike,13:30,6.7,,214.3,,,,,,,
+2026-09-29,,Strength,Tricep curl,,,,,,,60,lbs,10;10;10,,
+2026-09-29,,Strength,Bicep curl (machine),,,,,,,60,lbs,5,,
+2026-09-30,,Strength,Kettlebell overhead lift,,,,,,,20,kg,7;7;7,,
+2026-09-30,,Strength,Bicep curl (bar),,,,,,,30,kg,10;7,,
+2026-09-30,,Strength,Tricep curl,,,,,,,80,lbs,6;4,,
+2026-09-30,,Strength,Tricep curl,,,,,,,60,lbs,10;10,,
+2026-09-30,,Strength,Lat pulldown,,,,,,,110,lbs,10;10,,
+2026-09-30,,Strength,Low row,,,,,,,130,lbs,5;5,,
+2026-09-30,,Cardio,Cross trainer,10:00,1.22,,142,,,,,,,
+2026-10-01,,Cardio,Rowing machine,26:35,6.0,,,,,,,,,
+2026-10-02,,Cardio,Rowing machine,12:41,3.0,,,,,,,,,
+2026-10-02,,Strength,Lat pulldown,,,,,,,110,lbs,10;7,,
+2026-10-02,,Cardio,Exercise bike,6:00,3.0,,110.8,,,,,,,
+2026-10-03,,Strength,Kettlebell overhead lift,,,,,,,20,kg,10;7;5,,
+2026-10-03,,Strength,Bicep curl (bar),,,,,,,30,kg,10;7,,
+2026-10-03,,Strength,Tricep curl,,,,,,,80,lbs,8;4,,
+2026-10-03,,Strength,Tricep curl,,,,,,,60,lbs,10;10,,
+2026-10-03,,Strength,Low row,,,,,,,130,lbs,10;10;5,,
+2026-10-03,,Strength,Leg raises,,,,,,,,bw,6;6,,Logged as 'Leg ups'
+2026-10-03,,Cardio,Stair climber,6:00,,,,5-10,,,,,,Step walker
+2026-10-03,,Cardio,Exercise bike,20:00,10.78,,411.7,,,,,,,Logged as '10.78' - assumed km
+2026-10-04,,Cardio,Exercise bike,23:00,12.0,,444.3,,,,,,,
+2026-10-04,,Cardio,Stair climber,6:00,,,,5-10,,,,,,Step walker
+2026-10-05,,Cardio,Rowing machine,25:35,5.5,,,,,,,,,
+2026-10-06,,Rest,Rest day,,,,,,,,,,,
+2026-10-07,,Cardio,Rowing machine,20:00,4.55,,,,,,,,,"Logged as '4,550' - assumed metres"
+2026-10-07,,Cardio,Exercise bike,10:00,4.97,,204.1,,,,,,,
+2026-10-08,,Rest,Rest day,,,,,,,,,,,
+2026-10-09,,Strength,Dumbbell overhead lift,,,,,,,16,kg,10,,
+2026-10-09,,Strength,Dumbbell overhead lift,,,,,,,20,kg,6,,
+2026-10-09,,Strength,Bicep curl (bar),,,,,,,30,kg,6;5,,
+2026-10-09,,Cardio,Rowing machine,24:30,5.25,,,,,,,,,
+2026-10-09,,Strength,Tricep curl,,,,,,,80,lbs,10;5,,
+2026-10-09,,Cardio,Exercise bike,14:09,7.3,,285.7,,,,,,,Logged as '7.3 285.7km' - assumed 7.3km and 285.7 cal
+2026-10-10,,Outdoor,Kayaking,,20,,,,,,,,,With the tide
+2026-10-11,,Cardio,Exercise bike,24:00,12.6,,498.9,,,,,,,
+2026-10-12,,Sport,Squash,40:00,,,,,,,,,,
+2026-10-12,,Cardio,Rowing machine,23:17,5.0,,,,,,,,,
+2026-10-12,,Cardio,Treadmill,6:05,0.6,,,,5,,,,,
+2026-10-13,,Strength,Bicep curl (bar),,,,,,,30,kg,5;5;5,,
+2026-10-13,,Strength,Bicep curl (bar),,,,,,,20,kg,10;10,,
+2026-10-13,,Strength,Tricep curl,,,,,,,80,lbs,,,No sets/reps recorded
+2026-10-13,,Cardio,Exercise bike,10:00,4.66,,120.3,,,,,,,
+2026-10-15,,Cardio,Stair climber,11:00,,,,,,,,,,
+2026-10-15,,Cardio,Exercise bike,11:00,4.5,,141.2,,,,,,,Logged as 'Through Bike'
+2026-10-16,,Cardio,Rowing machine,44:15,10.0,,,,,,,,,
+2026-10-16,,Cardio,Exercise bike,11:53,6.1,,194.4,,,,,,,
+2026-10-17,,Strength,Bicep curl (bar),,,,,,,30,kg,7;7,,
+2026-10-17,,Strength,Bicep curl (bar),,,,,,,20,kg,10;10;10,,
+2026-10-17,,Strength,Lat pulldown,,,,,,,110,lbs,10;10;10,,
+2026-10-17,,Strength,Tricep curl,,,,,,,80,lbs,10;10,,
+2026-10-17,,Cardio,Stair climber,2:00,,,,10,,,,,,
+2026-10-18,,Outdoor,Kayaking,,10,,,,,,,,,
+2026-10-18,,Sport,Squash,45:00,,,,,,,,,,
+2026-10-19,,Cardio,Exercise bike,25:00,13.3,,524.0,,,,,,,
+2026-10-20,,Cardio,Rowing machine,21:45,5.0,,,,,,,,,
+2026-10-20,,Cardio,Stair climber,10:00,,,,5-10,,,,,,
+2026-10-20,,Cardio,Treadmill,10:00,0.91,,,,5,,,,,
+2026-10-20,,Strength,Bicep curl (bar),,,,,,,20,kg,10,,
+2026-10-20,,Strength,Bicep curl (bar),,,,,,,30,kg,10,,
+2026-10-21,,Strength,Bicep curl (machine),,,,,,,80,lbs,5,,Logged without kg so assumed lbs (machine)
+2026-10-21,,Strength,Bicep curl (machine),,,,,,,60,lbs,5,,Logged without kg so assumed lbs (machine)
+2026-10-22,,Cardio,Rowing machine,25:05,5.533,,,,,,,,,
+2026-10-22,,Strength,Lat pulldown,,,,,,,110,lbs,10;7,,
+2026-10-22,,Strength,Bicep curl (bar),,,,,,,30,kg,5;5,,
+2026-10-22,,Cardio,Exercise bike,13:00,6.8,,269.4,,,,,,,
+2026-10-23,,Sport,Squash,45:00,,,,,,,,,,Logged as '45:00 squash at' - entry looks truncated
+2026-10-24,,Cardio,Rowing machine,30:15,6.75,,,,,,,,,
+2026-10-24,,Cardio,Stair climber,5:38,,,,,,,,,,377 steps
+2026-10-25,,Rest,Rest day,,,,,,,,,,,
+2026-10-26,,Rest,Rest day,,,,,,,,,,,
+2026-10-27,,Cardio,Rowing machine,20:00,4.591,,,,,,,,,
+2026-10-27,,Strength,Bicep curl (bar),,,,,,,30,kg,5,,
+2026-10-27,,Cardio,Exercise bike,10:00,3.94,,213.6,,,,,,,
+2026-10-30,,Cardio,Rowing machine,4:40,1.067,,,,,,,,,
+2026-10-30,,Cardio,Treadmill,15:05,1.7,,,,,,,,,
+2026-10-30,,Strength,Lat pulldown,,,,,,,110,lbs,10;10,,
+2026-10-30,,Strength,Bicep curl (dumbbell),,,,,,,7,kg,10,,Each arm
+2026-10-30,,Strength,Bicep curl (dumbbell),,,,,,,7.5,kg,10,,Each arm
+2026-10-30,,Cardio,Stair climber,3:00,,,,10,,,,,,
+2026-10-31,,Cardio,Stair climber,5:00,,,,10,,,,,,
+2026-10-31,,Cardio,Exercise bike,20:00,7.9,,286.4,,,,,,,
+2026-11-01,,Cardio,Exercise bike,30:00,15.6,,563.7,,,,,,,
+2026-11-02,,Cardio,Stair climber,10:00,,,,10,,,,,,
+2026-11-02,,Cardio,Exercise bike,30:00,13.0,,501.3,,,,,,,
+2026-11-03,,Cardio,Treadmill,13:42,1.6,,,,,,,,,
+2026-11-03,,Cardio,Cross trainer,7:00,0.8,,,8-14,,,,,,
+2026-11-04,,Cardio,Exercise bike,31:00,16.6,,592.3,,,,,,,
+2026-11-05,,Cardio,Stair climber,11:00,,,,10,,,,,,
+2026-11-05,,Cardio,Treadmill,10:00,0.99,,,,7.0,,,,,
+2026-11-05,,Cardio,Exercise bike,10:00,4.5,,183.7,20,,,,,,
+2026-11-06,,Cardio,Stair climber,13:00,,,,10,,,,,,
+2026-11-06,,Cardio,Rowing machine,15:00,3.1,,,,,,,,,
+2026-11-06,,Cardio,Exercise bike,10:00,4.47,,186.0,,,,,,,
+2026-11-07,,Cardio,Treadmill,30:00,4.06,,,,,,,,,Logged as '4.06km8' - assumed 4.06km
+2026-11-08,,Cardio,Treadmill,11:33,1.11,116.8,,,,,,,,
+2026-11-08,,Cardio,Treadmill,5:00,0.43,65.1,,,,,,,,
+2026-11-08,,Cardio,Exercise bike,6:00,2.36,,,,,,,,,
+2026-11-09,,Cardio,Treadmill,37:43,5.0,,,,,,,,,
+2026-11-09,,Cardio,Exercise bike,10:11,4.52,,,,,,,,,
