@@ -26,14 +26,20 @@ class ConflictError(Exception):
     """The file changed in Dropbox after the app loaded it."""
 
 
-def _dropbox_config() -> dict | None:
+def _raw_config() -> dict:
+    """The [dropbox] secrets, with stray spaces (easy to add when pasting on a phone) removed."""
     try:
-        cfg = st.secrets.get("dropbox")
+        cfg = dict(st.secrets.get("dropbox") or {})
     except Exception:  # no secrets file at all
+        return {}
+    return {k: v.strip() if isinstance(v, str) else v for k, v in cfg.items()}
+
+
+def _dropbox_config() -> dict | None:
+    cfg = _raw_config()
+    if not all(cfg.get(k) for k in ("app_key", "app_secret", "refresh_token")):
         return None
-    if not cfg or not all(cfg.get(k) for k in ("app_key", "app_secret", "refresh_token")):
-        return None
-    return dict(cfg)
+    return cfg
 
 
 @st.cache_resource
@@ -43,11 +49,6 @@ def _client(app_key: str, app_secret: str, refresh_token: str):
     return dropbox.Dropbox(oauth2_refresh_token=refresh_token, app_key=app_key, app_secret=app_secret)
 
 
-def _raw_config() -> dict:
-    try:
-        return dict(st.secrets.get("dropbox") or {})
-    except Exception:
-        return {}
 
 
 def needs_connecting() -> bool:
